@@ -1,6 +1,8 @@
+import 'package:demo/data/database.dart';
 import 'package:demo/util/dialog_box.dart';
 import 'package:demo/util/todo_tile.dart';
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
 
 class CounterPage extends StatefulWidget {
   const CounterPage({super.key});
@@ -10,22 +12,46 @@ class CounterPage extends StatefulWidget {
 }
 
 class _CounterPageState extends State<CounterPage> {
+  // Open the Hive box
+  final _myBox = Hive.box('todo_box');
+
   final _controller = TextEditingController();
+
   // List of tasks
-  List toDoList = [];
+  ToDoDatabase database = ToDoDatabase();
+
+  @override
+  void initState() {
+    // Initialize the database
+    if (_myBox.get('TODOLIST') == null) {
+      database.createInitialData();
+    } else {
+      // Load existing data from the database
+      database.toDoList = _myBox.get('TODOLIST');
+      database.loadData();
+    }
+
+    super.initState();
+  }
 
   void saveNewTask() {
     setState(() {
-      toDoList.add([_controller.text, false]);
+      database.toDoList.add([_controller.text, false]);
       _controller.clear(); // Clear the text field after saving
     });
-    Navigator.of(context).pop(); // Close the dialog after saving
+    // Close the dialog after saving
+    Navigator.of(context).pop();
+
+    // Update the database after adding a new task
+    database.updateDataBase();
   }
 
   void checkBoxChanged(bool? value, int index) {
     setState(() {
-      toDoList[index][1] = !toDoList[index][1];
+      database.toDoList[index][1] = !database.toDoList[index][1];
     });
+    database
+        .updateDataBase(); // Update the database after changing the task status
   }
 
   void createNewTask() {
@@ -39,6 +65,14 @@ class _CounterPageState extends State<CounterPage> {
         );
       },
     );
+  }
+
+  void deleteTask(int index) {
+    setState(() {
+      database.toDoList.removeAt(index);
+    });
+    // Update the database after adding a new task
+    database.updateDataBase();
   }
 
   @override
@@ -63,12 +97,13 @@ class _CounterPageState extends State<CounterPage> {
       ),
 
       body: ListView.builder(
-        itemCount: toDoList.length,
+        itemCount: database.toDoList.length,
         itemBuilder: (context, index) {
           return TodoTile(
-            taskName: toDoList[index][0],
-            taskCompleted: toDoList[index][1],
+            taskName: database.toDoList[index][0],
+            taskCompleted: database.toDoList[index][1],
             onChanged: (value) => checkBoxChanged(value, index),
+            deleteFunction: (context) => deleteTask(index),
           );
         },
       ),
