@@ -2,7 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:demo/util/my_button.dart';
 
 class DialogBox extends StatelessWidget {
-  const DialogBox({super.key});
+  final Controller;
+
+  VoidCallback onSave;
+  VoidCallback onCancel;
+
+  DialogBox({
+    super.key,
+    required this.Controller,
+    required this.onSave,
+    required this.onCancel,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +33,7 @@ class DialogBox extends StatelessWidget {
                   child: MyButton(
                     text: "✕",
                     style: TextStyle(fontSize: 20),
-                    onPressed: () {},
+                    onPressed: onCancel,
                     backgroundColor: Color(0xffffffff),
                   ),
                 ),
@@ -39,6 +49,7 @@ class DialogBox extends StatelessWidget {
             SizedBox(
               height: 50,
               child: TextField(
+                controller: Controller,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.black),
@@ -49,6 +60,7 @@ class DialogBox extends StatelessWidget {
                   focusedBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.black),
                   ),
+
                   hintText: "Enter Task...",
                   hintStyle: TextStyle(fontSize: 18, color: Color(0xff838494)),
                 ),
@@ -64,7 +76,7 @@ class DialogBox extends StatelessWidget {
                     height: 50,
                     child: MyButton(
                       text: 'Done',
-                      onPressed: () {},
+                      onPressed: onSave,
                       style: TextStyle(fontSize: 20, color: Colors.white),
                       backgroundColor: Color(0xff0675f3),
                     ),

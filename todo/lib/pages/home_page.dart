@@ -10,14 +10,17 @@ class CounterPage extends StatefulWidget {
 }
 
 class _CounterPageState extends State<CounterPage> {
+  final _controller = TextEditingController();
   // List of tasks
-  List toDoList = [
-    ["Task 1", false],
-    ["Task 2", false],
-    ["Task 3", false],
-    ["Task 4", false],
-    ["Task 5", false],
-  ];
+  List toDoList = [];
+
+  void saveNewTask() {
+    setState(() {
+      toDoList.add([_controller.text, false]);
+      _controller.clear(); // Clear the text field after saving
+    });
+    Navigator.of(context).pop(); // Close the dialog after saving
+  }
 
   void checkBoxChanged(bool? value, int index) {
     setState(() {
@@ -29,7 +32,11 @@ class _CounterPageState extends State<CounterPage> {
     showDialog(
       context: context,
       builder: (context) {
-        return DialogBox();
+        return DialogBox(
+          Controller: _controller,
+          onSave: saveNewTask,
+          onCancel: () => Navigator.of(context).pop(),
+        );
       },
     );
   }
