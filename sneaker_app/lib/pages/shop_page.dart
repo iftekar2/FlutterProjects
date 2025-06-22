@@ -5,13 +5,6 @@ class ShopPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Text(
-          "Welcome to the Shop Page!",
-          style: TextStyle(fontSize: 24),
-        ),
-      ),
-    );
+    return Scaffold(body: Center(child: Text("Shop Page")));
   }
 }

@@ -12,7 +12,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int _currentIndex = 0;
-  void navigatorButtomBar(int index) {
+  void navigatorBottomBar(int index) {
     setState(() {
       _currentIndex = index;
     });
@@ -24,7 +24,70 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNav(
-        onTabChange: (index) => navigatorButtomBar(index),
+        onTabChange: (index) => navigatorBottomBar(index),
+      ),
+
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        leading: Builder(
+          builder:
+              (context) => IconButton(
+                icon: Icon(Icons.menu, size: 30),
+                onPressed: () {
+                  Scaffold.of(context).openDrawer();
+                },
+              ),
+        ),
+      ),
+
+      drawer: Drawer(
+        backgroundColor: Color(0xffeff0f0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
+          children: [
+            Column(
+              children: [
+                Container(
+                  padding: EdgeInsets.fromLTRB(0, 70, 0, 0),
+                  child: Image.asset(
+                    "lib/image/nike-logo.png",
+                    height: 100,
+                    width: 100,
+                  ),
+                ),
+
+                const ListTile(
+                  leading: Icon(Icons.home, size: 30),
+                  title: Text(
+                    "Home",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                  ),
+                ),
+
+                const ListTile(
+                  leading: Icon(Icons.info, size: 30),
+                  title: Text(
+                    "Info",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                  ),
+                ),
+              ],
+            ),
+
+            Padding(
+              padding: const EdgeInsets.only(right: 30, bottom: 30),
+              child: ListTile(
+                leading: Icon(Icons.logout, size: 30),
+                title: Text(
+                  "Logout",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
 
       body: _pages[_currentIndex],
