@@ -23,6 +23,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xffeff0f0),
       bottomNavigationBar: BottomNav(
         onTabChange: (index) => navigatorBottomBar(index),
       ),
@@ -30,14 +31,17 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        leading: Builder(
-          builder:
-              (context) => IconButton(
-                icon: Icon(Icons.menu, size: 30),
-                onPressed: () {
-                  Scaffold.of(context).openDrawer();
-                },
-              ),
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 15),
+          child: Builder(
+            builder:
+                (context) => IconButton(
+                  icon: Icon(Icons.menu, size: 30, color: Colors.black),
+                  onPressed: () {
+                    Scaffold.of(context).openDrawer();
+                  },
+                ),
+          ),
         ),
       ),
 
@@ -59,18 +63,26 @@ class _HomePageState extends State<HomePage> {
                 ),
 
                 const ListTile(
-                  leading: Icon(Icons.home, size: 30),
+                  leading: Icon(Icons.home, size: 30, color: Colors.black),
                   title: Text(
                     "Home",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black,
+                    ),
                   ),
                 ),
 
                 const ListTile(
-                  leading: Icon(Icons.info, size: 30),
+                  leading: Icon(Icons.info, size: 30, color: Colors.black),
                   title: Text(
                     "Info",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black,
+                    ),
                   ),
                 ),
               ],
@@ -79,10 +91,14 @@ class _HomePageState extends State<HomePage> {
             Padding(
               padding: const EdgeInsets.only(right: 30, bottom: 30),
               child: ListTile(
-                leading: Icon(Icons.logout, size: 30),
+                leading: Icon(Icons.logout, size: 30, color: Colors.black),
                 title: Text(
                   "Logout",
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.black,
+                  ),
                 ),
               ),
             ),
