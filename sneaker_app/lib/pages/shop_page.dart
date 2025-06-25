@@ -73,13 +73,17 @@ class ShopPage extends StatelessWidget {
                 Shoe shoe = Shoe(
                   name: "Jordan 1",
                   price: "20",
-                  description: "Does for amn",
+                  description: "Shoes for Men",
                   image: 'lib/image/Air-Jordan-1.png',
                 );
                 return ShoeTile(shoe: shoe);
               },
             ),
           ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(left: 10, right: 10, bottom: 10),
+          child: Divider(color: Color(0xffeff0f0)),
         ),
       ],
     );
