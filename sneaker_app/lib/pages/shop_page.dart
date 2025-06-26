@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:sneaker_app/components/shoe_tile.dart';
+import 'package:sneaker_app/model/cart.dart';
 import 'package:sneaker_app/model/shoe.dart';
 
 class ShopPage extends StatelessWidget {
@@ -7,85 +9,90 @@ class ShopPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          height: 60,
-          padding: const EdgeInsets.all(12),
-          decoration: BoxDecoration(
-            color: Colors.black,
-            borderRadius: BorderRadius.circular(10),
-          ),
-
-          margin: EdgeInsets.symmetric(horizontal: 30),
-
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    return Consumer<Cart>(
+      builder:
+          (context, value, child) => Column(
             children: [
-              Text(
-                "Search",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                  fontWeight: FontWeight.w600,
+              Container(
+                height: 60,
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: Colors.black,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+
+                margin: EdgeInsets.symmetric(horizontal: 30),
+
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Search",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+
+                    Icon(Icons.search, color: Colors.white, size: 30),
+                  ],
                 ),
               ),
 
-              Icon(Icons.search, color: Colors.white, size: 30),
-            ],
-          ),
-        ),
-
-        Padding(
-          padding: const EdgeInsets.all(25),
-          child: Text(
-            "everyone flies.. some fly longer than others",
-            style: TextStyle(fontSize: 16, color: Colors.grey),
-          ),
-        ),
-
-        Padding(
-          padding: const EdgeInsets.only(left: 25, right: 25),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                "New Release",
-                style: TextStyle(fontSize: 27, fontWeight: FontWeight.bold),
+              Padding(
+                padding: const EdgeInsets.all(25),
+                child: Text(
+                  "everyone flies.. some fly longer than others",
+                  style: TextStyle(fontSize: 16, color: Colors.grey),
+                ),
               ),
 
-              Text(
-                "See all",
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+              Padding(
+                padding: const EdgeInsets.only(left: 25, right: 25),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "New Release",
+                      style: TextStyle(
+                        fontSize: 27,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+
+                    Text(
+                      "See all",
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+
+              SizedBox(height: 20),
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 30),
+                  child: ListView.builder(
+                    itemCount: 4,
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (context, index) {
+                      // Get the shoe from the list of shoes for sale
+                      Shoe shoe = value.getShoesForSale()[index];
+                      return ShoeTile(shoe: shoe);
+                    },
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 10, right: 10, bottom: 10),
+                child: Divider(color: Color(0xffeff0f0)),
               ),
             ],
           ),
-        ),
-
-        SizedBox(height: 20),
-        Expanded(
-          child: Padding(
-            padding: const EdgeInsets.only(left: 30),
-            child: ListView.builder(
-              itemCount: 4,
-              scrollDirection: Axis.horizontal,
-              itemBuilder: (context, index) {
-                Shoe shoe = Shoe(
-                  name: "Jordan 1",
-                  price: "20",
-                  description: "Shoes for Men",
-                  image: 'lib/image/Air-Jordan-1.png',
-                );
-                return ShoeTile(shoe: shoe);
-              },
-            ),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(left: 10, right: 10, bottom: 10),
-          child: Divider(color: Color(0xffeff0f0)),
-        ),
-      ],
     );
   }
 }

@@ -76,7 +76,7 @@ class ShoeTile extends StatelessWidget {
 
                 Container(
                   padding: EdgeInsets.all(10),
-                  height: 60,
+                  height: 80,
                   width: 60,
                   decoration: BoxDecoration(
                     color: Colors.black,

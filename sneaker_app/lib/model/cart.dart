@@ -1,17 +1,18 @@
+import 'package:flutter/material.dart';
 import 'package:sneaker_app/model/shoe.dart';
 
-class Cart {
+class Cart extends ChangeNotifier {
   // List of Shoes for sale
   List<Shoe> shoesForSale = [
     Shoe(
-      name: "Air Jordan 1 Retro High OG 'UNC Reimagined'",
+      name: "Air Jordan 1",
       price: "185",
       description: "Men's Shoes",
       image: 'lib/image/Air-Jordan-1.png',
     ),
 
     Shoe(
-      name: "Air Jordan 12 Retro 'White and University Blue'",
+      name: "Air Jordan 12",
       price: "205",
       description: "Men's Shoes",
       image: 'lib/image/AIR-JORDAN-12-RETRO.png',
@@ -25,7 +26,7 @@ class Cart {
     ),
 
     Shoe(
-      name: "Nike Pegasus Premium",
+      name: "Nike Pegasus",
       price: "220",
       description: "Men's Shoes",
       image: "lib/image/NIKE-PEGASUS-PREMIUM-RUN.png",
@@ -50,6 +51,8 @@ class Cart {
     if (!shoesInCart.contains(shoe)) {
       shoesInCart.add(shoe);
     }
+    // Notify listeners to update the UI
+    notifyListeners();
   }
 
   // Remove a shoe from the cart
@@ -57,5 +60,7 @@ class Cart {
     if (shoesInCart.contains(shoe)) {
       shoesInCart.remove(shoe);
     }
+    // Notify listeners to update the UI
+    notifyListeners();
   }
 }
