@@ -4,8 +4,26 @@ import 'package:sneaker_app/components/shoe_tile.dart';
 import 'package:sneaker_app/model/cart.dart';
 import 'package:sneaker_app/model/shoe.dart';
 
-class ShopPage extends StatelessWidget {
+class ShopPage extends StatefulWidget {
   const ShopPage({super.key});
+
+  @override
+  State<ShopPage> createState() => _ShopPageState();
+}
+
+class _ShopPageState extends State<ShopPage> {
+  // Add shoe to cart
+  void addShoeToCart(Shoe shoe) {
+    Provider.of<Cart>(context, listen: false).addShoeToCart(shoe);
+
+    // Alert the user that the shoe has been added to the cart
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text('${shoe.name} has been added to the cart!'),
+        duration: Duration(seconds: 2),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -82,7 +100,10 @@ class ShopPage extends StatelessWidget {
                     itemBuilder: (context, index) {
                       // Get the shoe from the list of shoes for sale
                       Shoe shoe = value.getShoesForSale()[index];
-                      return ShoeTile(shoe: shoe);
+                      return ShoeTile(
+                        shoe: shoe,
+                        onTap: () => addShoeToCart(shoe),
+                      );
                     },
                   ),
                 ),
