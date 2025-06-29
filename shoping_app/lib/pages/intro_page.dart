@@ -41,6 +41,31 @@ class IntroPage extends StatelessWidget {
               ),
 
               // Apple Login
+              SizedBox(
+                height: 60,
+                width: 350,
+
+                child: ElevatedButton.icon(
+                  onPressed: () {},
+                  label: Text(
+                    "Continue with Apple",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  icon: Icon(Icons.apple, color: Colors.black, size: 30),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.white,
+                    elevation: 0,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                    side: BorderSide(color: Colors.grey[300]!, width: 1),
+                  ),
+                ),
+              ),
 
               // Google Login
 
