@@ -53,11 +53,7 @@ class IntroPage extends StatelessWidget {
                       SizedBox(width: 20),
                       Text(
                         "Continue with Apple",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 20,
-                          fontWeight: FontWeight.w600,
-                        ),
+                        style: TextStyle(color: Colors.black, fontSize: 20),
                       ),
                     ],
                   ),
@@ -85,11 +81,7 @@ class IntroPage extends StatelessWidget {
                       SizedBox(width: 20),
                       Text(
                         "Sign In with Gmail",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 20,
-                          fontWeight: FontWeight.w600,
-                        ),
+                        style: TextStyle(color: Colors.black, fontSize: 20),
                       ),
                     ],
                   ),
@@ -100,6 +92,29 @@ class IntroPage extends StatelessWidget {
                       borderRadius: BorderRadius.circular(30),
                     ),
                     side: BorderSide(color: Colors.grey[300]!, width: 1),
+                  ),
+                ),
+              ),
+
+              SizedBox(height: 20),
+              // Continue Button
+              SizedBox(
+                height: 60,
+                width: 350,
+                child: ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.white,
+                    elevation: 0,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                    side: BorderSide(color: Colors.grey[300]!, width: 1),
+                  ),
+
+                  child: Text(
+                    "Continue",
+                    style: TextStyle(fontSize: 20, color: Colors.black),
                   ),
                 ),
               ),
