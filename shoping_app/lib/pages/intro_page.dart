@@ -111,10 +111,12 @@ class IntroPage extends StatelessWidget {
                     Expanded(
                       child: Divider(color: Colors.grey[300], thickness: 1),
                     ),
+                    SizedBox(width: 10),
                     Text(
                       "Or log in",
                       style: TextStyle(fontSize: 18, color: Colors.grey[600]),
                     ),
+                    SizedBox(width: 10),
                     Expanded(
                       child: Divider(color: Colors.grey[300], thickness: 1),
                     ),
@@ -123,7 +125,22 @@ class IntroPage extends StatelessWidget {
               ),
 
               // Continue
-              Text("Already have an account "),
+              Text.rich(
+                TextSpan(
+                  text: "Already have an account ",
+                  style: TextStyle(color: Colors.black, fontSize: 16),
+                  children: <TextSpan>[
+                    TextSpan(
+                      text: "Login",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
