@@ -21,7 +21,19 @@ class HomePage extends StatelessWidget {
       ),
 
       drawer: Drawer(
-        child: ListView(children: [ListTile(title: Text("Home"))]),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            SizedBox(
+              height: 300,
+              child: Icon(
+                Icons.shopping_cart_outlined,
+                size: 80,
+                color: Colors.grey[500],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
