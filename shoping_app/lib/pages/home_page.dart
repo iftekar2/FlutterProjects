@@ -5,6 +5,24 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Center(child: Text("Home Page")));
+    return Scaffold(
+      appBar: AppBar(
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 10, right: 10),
+          child: Builder(
+            builder: (context) {
+              return IconButton(
+                icon: Icon(Icons.menu),
+                onPressed: () => {Scaffold.of(context).openDrawer()},
+              );
+            },
+          ),
+        ),
+      ),
+
+      drawer: Drawer(
+        child: ListView(children: [ListTile(title: Text("Home"))]),
+      ),
+    );
   }
 }
