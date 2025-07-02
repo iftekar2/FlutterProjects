@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shoping_app/pages/shop_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -8,7 +9,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  // final List<Widget> _pages = [const ShopPage(), const CartPage()];
+  final List<Widget> _pages = [const ShopPage()];
 
   int _currentIndex = 0;
   void navigation(int index) {
@@ -156,7 +157,7 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
 
-      //body: _pages,
+      body: _pages[_currentIndex],
     );
   }
 }
