@@ -19,6 +19,16 @@ class HomePage extends StatelessWidget {
             },
           ),
         ),
+
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 10),
+            child: IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.shopping_cart, size: 30),
+            ),
+          ),
+        ],
       ),
 
       drawer: Drawer(
