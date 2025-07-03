@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shoping_app/pages/cart_page.dart';
 import 'package:shoping_app/pages/shop_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -16,6 +17,13 @@ class _HomePageState extends State<HomePage> {
     setState(() {
       _currentIndex = index;
     });
+  }
+
+  void navigateToCartPage(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const CartPage()),
+    );
   }
 
   @override
@@ -39,7 +47,7 @@ class _HomePageState extends State<HomePage> {
           Padding(
             padding: const EdgeInsets.only(right: 10),
             child: IconButton(
-              onPressed: () {},
+              onPressed: () => navigateToCartPage(context),
               icon: Icon(Icons.shopping_cart, size: 30),
             ),
           ),
