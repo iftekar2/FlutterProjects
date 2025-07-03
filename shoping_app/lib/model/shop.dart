@@ -1,33 +1,34 @@
-import 'package:shoping_app/model/shopping_items.dart';
+import 'package:flutter/material.dart';
+import 'package:shoping_app/model/product.dart';
 
-class Shop {
+class Shop extends ChangeNotifier {
   // Products for Sale
-  final List<ShoppingItems> _products = [
-    ShoppingItems(
+  final List<Product> _products = [
+    Product(
       name: "Hoodie",
       price: 100.0,
       description: "A cozy hoodie",
       image: "library/images/Womens-Essential-Hoodie.jpg",
     ),
-    ShoppingItems(
+    Product(
       name: "Shoe",
       price: 99.0,
       description: "A cozy Shoe",
       image: "library/images/shoes.jpg",
     ),
-    ShoppingItems(
+    Product(
       name: "T-shirt",
       price: 100.0,
       description: "A cozy t-shirt",
       image: "library/images/t-shirt.jpg",
     ),
-    ShoppingItems(
+    Product(
       name: "Pants",
       price: 100.0,
       description: "A cozy pants",
       image: "library/images/pants.jpg",
     ),
-    ShoppingItems(
+    Product(
       name: "Sun glass",
       price: 100.0,
       description: "A cozy sun glass",
@@ -36,21 +37,23 @@ class Shop {
   ];
 
   // User Cart
-  final List<ShoppingItems> _cart = [];
+  final List<Product> _cart = [];
 
   // Get product list
-  List<ShoppingItems> getProducts() => _products;
+  List<Product> getProducts() => _products;
 
   // Get cart list
-  List<ShoppingItems> getCart() => _cart;
+  List<Product> getCart() => _cart;
 
   // Adding product to cart
-  void addToCart(ShoppingItems product) {
+  void addToCart(Product product) {
     _cart.add(product);
+    notifyListeners();
   }
 
   // Remove product from cart
-  void removeFromCart(ShoppingItems product) {
+  void removeFromCart(Product product) {
     _cart.remove(product);
+    notifyListeners();
   }
 }
