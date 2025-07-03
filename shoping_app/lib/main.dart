@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shoping_app/model/shop.dart';
-import 'package:shoping_app/pages/home_page.dart';
 import 'package:shoping_app/pages/intro_page.dart';
 
 void main() {
@@ -18,7 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(scaffoldBackgroundColor: Colors.white),
       debugShowCheckedModeBanner: false,
-      home: IntroPage(homePage: const HomePage()),
+      home: IntroPage(),
     );
   }
 }

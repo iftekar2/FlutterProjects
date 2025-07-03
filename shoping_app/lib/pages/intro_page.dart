@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:shoping_app/pages/home_page.dart';
 
 class IntroPage extends StatelessWidget {
-  final HomePage homePage;
-  IntroPage({super.key, required this.homePage});
+  //final HomePage homePage;
+  IntroPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    void continueToHomePge() {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => homePage),
-      );
-    }
+    // void continueToHomePge() {
+    //   Navigator.pushReplacement(
+    //     context,
+    //     MaterialPageRoute(builder: (context) => homePage),
+    //   );
+    // }
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -111,7 +110,7 @@ class IntroPage extends StatelessWidget {
                 height: 60,
                 width: 350,
                 child: ElevatedButton(
-                  onPressed: continueToHomePge,
+                  onPressed: () {},
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.white,
                     elevation: 0,
