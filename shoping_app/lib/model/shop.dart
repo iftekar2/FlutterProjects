@@ -8,31 +8,31 @@ class Shop extends ChangeNotifier {
       name: "Hoodie",
       price: 100.0,
       description: "A cozy hoodie",
-      image: "library/images/Womens-Essential-Hoodie.jpg",
+      image: "lib/images/Womens-Essential-Hoodie.jpg",
     ),
     Product(
       name: "Shoe",
       price: 99.0,
       description: "A cozy Shoe",
-      image: "library/images/shoes.jpg",
+      image: "lib/images/shoes.jpg",
     ),
     Product(
       name: "T-shirt",
       price: 100.0,
       description: "A cozy t-shirt",
-      image: "library/images/t-shirt.jpg",
+      image: "lib/images/t-shirt.jpg",
     ),
     Product(
       name: "Pants",
       price: 100.0,
       description: "A cozy pants",
-      image: "library/images/pants.jpg",
+      image: "lib/images/pants.jpg",
     ),
     Product(
       name: "Sun glass",
       price: 100.0,
       description: "A cozy sun glass",
-      image: "library/images/sunglass.jpg",
+      image: "lib/images/sunglass.jpg",
     ),
   ];
 

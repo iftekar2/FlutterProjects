@@ -10,6 +10,7 @@ class ShopPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final products = context.watch<Shop>().getProducts();
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -17,12 +18,30 @@ class ShopPage extends StatelessWidget {
       ),
       drawer: MyDrawer(),
 
-      body: ListView.builder(
-        itemCount: products.length,
-        itemBuilder: (context, index) {
-          final product = products[index];
-          return MyProductTile(product: product);
-        },
+      body: ListView(
+        children: [
+          SizedBox(height: 20),
+          // Shop subtitle
+          Center(
+            child: Text(
+              "Pick from a selected list of premium products",
+              style: TextStyle(fontSize: 16),
+            ),
+          ),
+
+          // Shop list
+          SizedBox(
+            height: 550,
+            child: ListView.builder(
+              itemCount: products.length,
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) {
+                final product = products[index];
+                return MyProductTile(product: product);
+              },
+            ),
+          ),
+        ],
       ),
     );
   }
