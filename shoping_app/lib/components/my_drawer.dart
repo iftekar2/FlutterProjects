@@ -10,7 +10,15 @@ class MyDrawer extends StatelessWidget {
       child: Column(
         children: [
           // Drawer header: Logo
-          DrawerHeader(child: Icon(Icons.shopping_cart, size: 80)),
+          Container(
+            height: 300,
+            alignment: Alignment.center,
+            child: const Icon(
+              Icons.shopping_cart,
+              size: 80,
+              color: Colors.black,
+            ),
+          ),
 
           // Shop tile
 
