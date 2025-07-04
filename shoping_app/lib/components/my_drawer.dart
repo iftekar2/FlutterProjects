@@ -10,6 +10,7 @@ class MyDrawer extends StatelessWidget {
       child: Column(
         children: [
           // Drawer header: Logo
+          //Use Container instead of DrawerHeader
           Container(
             height: 300,
             alignment: Alignment.center,
