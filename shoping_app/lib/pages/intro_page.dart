@@ -110,7 +110,7 @@ class IntroPage extends StatelessWidget {
                 height: 60,
                 width: 350,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () => Navigator.pushNamed(context, 'shop_page'),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.white,
                     elevation: 0,

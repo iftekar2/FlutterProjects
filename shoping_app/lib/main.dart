@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shoping_app/model/shop.dart';
 import 'package:shoping_app/pages/intro_page.dart';
+import 'package:shoping_app/pages/shop_page.dart';
 
 void main() {
   runApp(
@@ -18,6 +19,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(scaffoldBackgroundColor: Colors.white),
       debugShowCheckedModeBanner: false,
       home: IntroPage(),
+      routes: {
+        '/intro_page': (context) => IntroPage(),
+        'shop_page': (context) => ShopPage(),
+      },
     );
   }
 }
