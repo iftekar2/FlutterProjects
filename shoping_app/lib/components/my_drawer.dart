@@ -27,9 +27,20 @@ class MyDrawer extends StatelessWidget {
 
               const SizedBox(height: 20),
               // Shop tile
-              MyListTile(icon: Icons.home, text: "Home", onTap: () {}),
+              MyListTile(
+                icon: Icons.home,
+                text: "Home",
+                onTap: () => Navigator.pop(context),
+              ),
 
-              MyListTile(icon: Icons.shopping_cart, text: "Cart", onTap: () {}),
+              MyListTile(
+                icon: Icons.shopping_cart,
+                text: "Cart",
+                onTap: () {
+                  Navigator.pop(context);
+                  Navigator.pushNamed(context, '/cart_page');
+                },
+              ),
             ],
           ),
 
@@ -38,7 +49,10 @@ class MyDrawer extends StatelessWidget {
             child: MyListTile(
               icon: Icons.exit_to_app,
               text: "Exit",
-              onTap: () {},
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.pushNamed(context, '/intro_page');
+              },
             ),
           ),
           // Cart tile
