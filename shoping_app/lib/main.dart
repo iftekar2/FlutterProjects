@@ -6,9 +6,7 @@ import 'package:shoping_app/pages/intro_page.dart';
 import 'package:shoping_app/pages/shop_page.dart';
 
 void main() {
-  runApp(
-    ChangeNotifierProvider(create: (context) => Shop(), child: const MyApp()),
-  );
+  runApp(ChangeNotifierProvider(create: (_) => Shop(), child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {

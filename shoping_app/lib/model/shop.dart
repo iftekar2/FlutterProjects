@@ -3,7 +3,7 @@ import 'package:shoping_app/model/product.dart';
 
 class Shop extends ChangeNotifier {
   // Products for Sale
-  final List<Product> _products = [
+  final List<Product> _shop = [
     Product(
       name: "Hoodie",
       price: 100.0,
@@ -40,7 +40,7 @@ class Shop extends ChangeNotifier {
   final List<Product> _cart = [];
 
   // Get product list
-  List<Product> getProducts() => _products;
+  List<Product> getProducts() => _shop;
 
   // Get cart list
   List<Product> getCart() => _cart;
