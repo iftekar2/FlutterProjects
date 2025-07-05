@@ -47,23 +47,31 @@ class CartPage extends StatelessWidget {
         children: [
           // Items in the cart
           Expanded(
-            child: ListView.builder(
-              itemCount: cart.length,
-              itemBuilder: (context, index) {
-                // Show items in the cart
-                final item = cart[index];
+            child:
+                cart.isEmpty
+                    ? Center(
+                      child: const Text(
+                        "Your cart is empty.",
+                        style: TextStyle(fontSize: 24),
+                      ),
+                    )
+                    : ListView.builder(
+                      itemCount: cart.length,
+                      itemBuilder: (context, index) {
+                        // Show items in the cart
+                        final item = cart[index];
 
-                // Return the cart tile
-                return ListTile(
-                  title: Text(item.name),
-                  subtitle: Text(item.price.toString()),
-                  trailing: IconButton(
-                    onPressed: () => removeFromCart(context, item),
-                    icon: Icon(Icons.delete),
-                  ),
-                );
-              },
-            ),
+                        // Return the cart tile
+                        return ListTile(
+                          title: Text(item.name),
+                          subtitle: Text(item.price.toString()),
+                          trailing: IconButton(
+                            onPressed: () => removeFromCart(context, item),
+                            icon: Icon(Icons.delete),
+                          ),
+                        );
+                      },
+                    ),
           ),
 
           // Pay
