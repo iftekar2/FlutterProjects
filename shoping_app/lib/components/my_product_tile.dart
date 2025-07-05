@@ -1,9 +1,38 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:shoping_app/model/product.dart';
+import 'package:shoping_app/model/shop.dart';
 
 class MyProductTile extends StatelessWidget {
   final Product product;
   const MyProductTile({super.key, required this.product});
+
+  // Add Item to Cart
+  void addToCart(BuildContext context) {
+    showDialog(
+      context: context,
+      builder:
+          (context) => AlertDialog(
+            content: Text("Add this item to cart?"),
+            actions: [
+              // Cancel adding item to cart
+              MaterialButton(
+                onPressed: () => Navigator.pop(context),
+                child: Text("Cancel"),
+              ),
+              // Add item to the cart
+              MaterialButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                  context.read<Shop>().addToCart(product);
+                },
+
+                child: Text("Add"),
+              ),
+            ],
+          ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -51,10 +80,31 @@ class MyProductTile extends StatelessWidget {
             ],
           ),
           SizedBox(height: 10),
-          // Product Price
-          Text(product.price.toString(), style: TextStyle(fontSize: 20)),
 
-          // Add to cart button
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              // Product Price
+              Text(
+                '\$' + product.price.toString(),
+                style: TextStyle(fontSize: 20),
+              ),
+
+              // Add to cart button
+              Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                height: 70,
+                width: 70,
+                child: IconButton(
+                  onPressed: () => addToCart(context),
+                  icon: Icon(Icons.add),
+                ),
+              ),
+            ],
+          ),
         ],
       ),
     );
