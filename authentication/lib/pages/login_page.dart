@@ -140,9 +140,33 @@ class LoginPage extends StatelessWidget {
                 ],
               ),
             ),
-
+            SizedBox(height: 20),
             // Sign up with email button
-
+            SizedBox(
+              height: 60,
+              width: 500,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.black,
+                  elevation: 0,
+                  // This is to remove the ripple effect when button is pressed
+                  shadowColor: Colors.transparent,
+                  splashFactory: NoSplash.splashFactory,
+                ),
+                onPressed: () {},
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.email_outlined, size: 30, color: Colors.white),
+                    SizedBox(width: 10),
+                    Text(
+                      "Sign up with Email",
+                      style: TextStyle(fontSize: 20, color: Colors.white),
+                    ),
+                  ],
+                ),
+              ),
+            ),
             // Log in
           ],
         ),
