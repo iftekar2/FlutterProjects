@@ -119,7 +119,27 @@ class LoginPage extends StatelessWidget {
               ),
             ),
 
+            SizedBox(height: 30),
             // Other signup options text
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 20),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Divider(color: Colors.grey[360], thickness: 1),
+                  ),
+                  SizedBox(width: 10),
+                  Text(
+                    "Or log in",
+                    style: TextStyle(fontSize: 18, color: Colors.grey[700]),
+                  ),
+                  SizedBox(width: 10),
+                  Expanded(
+                    child: Divider(color: Colors.grey[360], thickness: 1),
+                  ),
+                ],
+              ),
+            ),
 
             // Sign up with email button
 
