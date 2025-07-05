@@ -74,7 +74,50 @@ class LoginPage extends StatelessWidget {
               ),
             ),
 
+            SizedBox(height: 20),
             // Google login button
+            SizedBox(
+              height: 60,
+              width: 500,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.grey[300],
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(50),
+                    side: BorderSide(
+                      color: Colors.grey.withOpacity(0.3),
+                      width: 1,
+                    ),
+                  ),
+                  elevation: 0,
+                  // This is to remove the ripple effect when button is pressed
+                  shadowColor: Colors.transparent,
+                  splashFactory:
+                      NoSplash.splashFactory, // Removes ripple effect
+                ),
+                onPressed: () {},
+                child: Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 5),
+                        child: Image(
+                          image: const AssetImage("lib/images/google-logo.png"),
+                          height: 35,
+                          width: 35,
+                        ),
+                      ),
+                    ),
+                    Text(
+                      "Continue with Google",
+                      style: TextStyle(fontSize: 20, color: Colors.black),
+                    ),
+                  ],
+                ),
+              ),
+            ),
 
             // Other signup options text
 
