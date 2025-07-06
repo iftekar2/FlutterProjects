@@ -1,11 +1,18 @@
+import 'package:authentication/components/my_textfield.dart';
 import 'package:flutter/material.dart';
 
 class EmailSignupPage extends StatelessWidget {
-  const EmailSignupPage({super.key});
+  EmailSignupPage({super.key});
+
+  final userNameController = TextEditingController();
+  final passwordController = TextEditingController();
+  final emailController = TextEditingController();
+  final confirmPasswordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(backgroundColor: Colors.grey[300]),
       backgroundColor: Colors.grey[300],
       body: Padding(
         padding: const EdgeInsets.only(left: 40, right: 40),
@@ -23,66 +30,34 @@ class EmailSignupPage extends StatelessWidget {
               Column(
                 children: [
                   // Full name field
-                  TextField(
-                    decoration: InputDecoration(
-                      hintText: "Full Name",
-                      hintStyle: TextStyle(fontSize: 20),
-                      contentPadding: const EdgeInsets.symmetric(
-                        horizontal: 20,
-                        vertical: 12,
-                      ),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                    ),
+                  MyTextfield(
+                    controller: userNameController,
+                    hintText: "Full Name",
+                    obscureText: false,
                   ),
 
                   SizedBox(height: 20),
                   // Email field
-                  TextField(
-                    decoration: InputDecoration(
-                      hintText: "Email",
-                      hintStyle: TextStyle(fontSize: 20),
-                      contentPadding: const EdgeInsets.symmetric(
-                        horizontal: 20,
-                        vertical: 12,
-                      ),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                    ),
+                  MyTextfield(
+                    controller: emailController,
+                    hintText: "Email",
+                    obscureText: false,
                   ),
 
                   SizedBox(height: 20),
                   // Password field
-                  TextField(
-                    decoration: InputDecoration(
-                      hintText: "Password",
-                      hintStyle: TextStyle(fontSize: 20),
-                      contentPadding: const EdgeInsets.symmetric(
-                        horizontal: 20,
-                        vertical: 12,
-                      ),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                    ),
+                  MyTextfield(
+                    controller: passwordController,
+                    hintText: "Password",
+                    obscureText: true,
                   ),
 
                   SizedBox(height: 20),
                   // Confirm password field
-                  TextField(
-                    decoration: InputDecoration(
-                      hintText: "Confirm Password",
-                      hintStyle: TextStyle(fontSize: 20),
-                      contentPadding: const EdgeInsets.symmetric(
-                        horizontal: 20,
-                        vertical: 12,
-                      ),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                    ),
+                  MyTextfield(
+                    controller: confirmPasswordController,
+                    hintText: "Confirm Password",
+                    obscureText: true,
                   ),
                 ],
               ),

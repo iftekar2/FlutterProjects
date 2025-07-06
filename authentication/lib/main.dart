@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       home: LoginOptionsPage(),
       routes: {
         '/login_options_page': (context) => const LoginOptionsPage(),
-        '/email_signup_page': (context) => const EmailSignupPage(),
+        '/email_signup_page': (context) => EmailSignupPage(),
       },
     );
   }
