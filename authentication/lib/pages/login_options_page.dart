@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class LoginOptionsPage extends StatelessWidget {
+  const LoginOptionsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -153,7 +153,8 @@ class LoginPage extends StatelessWidget {
                   shadowColor: Colors.transparent,
                   splashFactory: NoSplash.splashFactory,
                 ),
-                onPressed: () {},
+                onPressed:
+                    () => Navigator.pushNamed(context, "/email_signup_page"),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
