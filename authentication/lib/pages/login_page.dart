@@ -167,7 +167,25 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
             ),
+
+            SizedBox(height: 30),
             // Log in
+            Text.rich(
+              TextSpan(
+                text: "Already have an account ",
+                style: TextStyle(color: Colors.black, fontSize: 16),
+                children: <TextSpan>[
+                  TextSpan(
+                    text: "Login",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
