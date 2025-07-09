@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         '/login_options_page': (context) => const LoginOptionsPage(),
         '/email_signup_page': (context) => EmailSignupPage(),
         '/login_page': (context) => LoginPage(),
-        'forgot_password_page': (context) => ForgotPassword(),
+        '/forgot_password_page': (context) => ForgotPassword(),
       },
     );
   }

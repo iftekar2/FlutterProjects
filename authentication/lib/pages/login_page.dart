@@ -10,11 +10,21 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     void forgotPassword() {
-      Navigator.pushNamed(context, "forgot_password_page");
+      Navigator.pushNamed(context, "/forgot_password_page");
+    }
+
+    void navigateToLoginOptions() {
+      Navigator.pushNamed(context, "/login_options_page");
     }
 
     return Scaffold(
-      appBar: AppBar(backgroundColor: Colors.grey[300], toolbarHeight: 30),
+      appBar: AppBar(
+        backgroundColor: Colors.grey[300],
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.black),
+          onPressed: navigateToLoginOptions,
+        ),
+      ),
       backgroundColor: Colors.grey[300],
       body: Padding(
         padding: const EdgeInsets.only(left: 20, right: 20),
