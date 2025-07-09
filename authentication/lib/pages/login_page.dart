@@ -9,8 +9,12 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    void forgotPassword() {
+      Navigator.pushNamed(context, "forgot_password_page");
+    }
+
     return Scaffold(
-      appBar: AppBar(backgroundColor: Colors.grey[300]),
+      appBar: AppBar(backgroundColor: Colors.grey[300], toolbarHeight: 30),
       backgroundColor: Colors.grey[300],
       body: Padding(
         padding: const EdgeInsets.only(left: 20, right: 20),
@@ -34,9 +38,12 @@ class LoginPage extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Text(
-                  "Forgot Password",
-                  style: TextStyle(color: Colors.grey[700], fontSize: 16),
+                GestureDetector(
+                  onTap: forgotPassword,
+                  child: Text(
+                    "Forgot Password",
+                    style: TextStyle(color: Colors.grey[700], fontSize: 16),
+                  ),
                 ),
               ],
             ),

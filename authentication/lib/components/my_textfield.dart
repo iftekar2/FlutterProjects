@@ -17,6 +17,7 @@ class MyTextfield extends StatelessWidget {
     return TextField(
       controller: controller,
       obscureText: obscureText,
+      style: TextStyle(fontSize: 20),
       decoration: InputDecoration(
         hintText: hintText,
         hintStyle: TextStyle(fontSize: 20, color: Colors.grey[600]),
