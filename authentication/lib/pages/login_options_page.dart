@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class LoginOptionsPage extends StatelessWidget {
@@ -183,6 +184,11 @@ class LoginOptionsPage extends StatelessWidget {
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
                     ),
+                    recognizer:
+                        TapGestureRecognizer()
+                          ..onTap = () {
+                            Navigator.pushNamed(context, "/login_page");
+                          },
                   ),
                 ],
               ),
