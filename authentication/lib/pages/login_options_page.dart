@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 class LoginOptionsPage extends StatelessWidget {
   const LoginOptionsPage({super.key});
@@ -96,7 +97,12 @@ class LoginOptionsPage extends StatelessWidget {
                   splashFactory:
                       NoSplash.splashFactory, // Removes ripple effect
                 ),
-                onPressed: () {},
+                onPressed: () async {
+                  await Supabase.instance.client.auth.signInWithOAuth(
+                    OAuthProvider.google,
+                    authScreenLaunchMode: LaunchMode.inAppWebView,
+                  );
+                },
                 child: Stack(
                   alignment: Alignment.center,
                   children: [
