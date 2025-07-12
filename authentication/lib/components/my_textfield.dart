@@ -32,21 +32,3 @@ class MyTextfield extends StatelessWidget {
     );
   }
 }
-
-// validator: (value) {
-//         if (value!.isEmpty) {
-//           return 'Please enter a value';
-//         }
-//         return null;
-//       },
-//       controller: controller,
-//       obscureText: obscureText,
-//       style: TextStyle(fontSize: 20),
-//       decoration: InputDecoration(
-//         hintText: hintText,
-//         hintStyle: TextStyle(fontSize: 20, color: Colors.grey[600]),
-//         contentPadding: const EdgeInsets.symmetric(
-//           horizontal: 20,
-//           vertical: 12,
-//         ),
-//       ),
