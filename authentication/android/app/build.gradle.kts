@@ -5,6 +5,8 @@ plugins {
     id("dev.flutter.flutter-gradle-plugin")
 }
 
+apply plugin: "com.google.gms.google-services"
+
 android {
     namespace = "com.example.authentication"
     compileSdk = flutter.compileSdkVersion
@@ -22,6 +24,8 @@ android {
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId = "com.example.authentication"
+        implementation(platform("com.google.firebase:firebase-bom:33.16.0"))
+        implementation("com.google.firebase:firebase-analytics")
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
         minSdk = flutter.minSdkVersion

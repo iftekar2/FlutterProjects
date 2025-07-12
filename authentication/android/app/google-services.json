@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "692669265108",
+    "project_id": "authentication-35daf",
+    "storage_bucket": "authentication-35daf.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:692669265108:android:3c19af5f79f53447893741",
+        "android_client_info": {
+          "package_name": "com.example.authentication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTKqlBmfFu5lo_W5J1wVF-oG--eppKOdU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
