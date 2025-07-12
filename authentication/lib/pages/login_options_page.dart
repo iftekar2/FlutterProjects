@@ -1,3 +1,5 @@
+import 'package:authentication/components/auth.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
@@ -96,7 +98,9 @@ class LoginOptionsPage extends StatelessWidget {
                   splashFactory:
                       NoSplash.splashFactory, // Removes ripple effect
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  AuthMethod().signinWithGoogle(context);
+                },
                 child: Stack(
                   alignment: Alignment.center,
                   children: [
