@@ -1,5 +1,6 @@
 import 'package:authentication/pages/email_signup_page.dart';
 import 'package:authentication/pages/forgot_password.dart';
+import 'package:authentication/pages/home_page.dart';
 import 'package:authentication/pages/login_options_page.dart';
 import 'package:authentication/pages/login_page.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
         '/email_signup_page': (context) => EmailSignupPage(),
         '/login_page': (context) => LoginPage(),
         '/forgot_password_page': (context) => ForgotPassword(),
+        '/home_page': (context) => HomePage(),
       },
     );
   }
