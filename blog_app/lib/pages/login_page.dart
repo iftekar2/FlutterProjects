@@ -1,3 +1,4 @@
+import 'package:blog_app/components/signin_options_button.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -26,6 +27,13 @@ class _LoginPageState extends State<LoginPage> {
               Text(
                 "Best Blog and news app in the world",
                 style: TextStyle(fontSize: 18, color: Colors.grey[600]),
+              ),
+
+              SizedBox(height: 15),
+              SigninOptionsButton(
+                buttonText: "Sign In",
+                buttonImage: "lib/images/Apple-Logosu.png",
+                onPressed: () {},
               ),
             ],
           ),
