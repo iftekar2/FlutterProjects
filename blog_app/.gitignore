@@ -43,3 +43,8 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Google Services (contains sensitive keys)
+android/app/google-services.json
+ios/Runner/GoogleService-Info.plist
+ion/Runner/Info.plist

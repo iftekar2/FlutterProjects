@@ -1,3 +1,4 @@
+import 'package:blog_app/authentication/auth.dart';
 import 'package:blog_app/components/signin_options_button.dart';
 import 'package:flutter/material.dart';
 
@@ -39,12 +40,15 @@ class _LoginPageState extends State<LoginPage> {
               Divider(color: Colors.grey[300], thickness: 1.5),
 
               SizedBox(height: 20),
-              SigninOptionsButton(
-                buttonText: "Continue with Apple",
-                buttonImage: "lib/images/Apple-Logosu.png",
-                imageHeight: 35,
-                imageWidth: 35,
-                onPressed: () {},
+              GestureDetector(
+                child: SigninOptionsButton(
+                  buttonText: "Continue with Apple",
+                  buttonImage:
+                      "lib/images/5b83693bae2828e7c357855f276520b0.jpg",
+                  imageHeight: 35,
+                  imageWidth: 35,
+                  onPressed: () {},
+                ),
               ),
 
               SizedBox(height: 20),
@@ -54,7 +58,9 @@ class _LoginPageState extends State<LoginPage> {
                     "lib/images/google-logo-png-suite-everything-you-need-know-about-google-newest-0.png",
                 imageHeight: 35,
                 imageWidth: 35,
-                onPressed: () {},
+                onPressed: () {
+                  AuthMethods().signInWithGoogle(context);
+                },
               ),
 
               SizedBox(height: 10),
