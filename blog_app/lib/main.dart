@@ -1,4 +1,5 @@
 import 'package:blog_app/pages/login_page.dart';
+import 'package:blog_app/pages/welcome_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,7 +15,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Blog App',
-      home: const LoginPage(),
+      home: const WelcomePage(),
+
+      routes: {
+        '/welcome_page': (context) => const WelcomePage(),
+        '/login_page': (context) => const LoginPage(),
+      },
     );
   }
 }
