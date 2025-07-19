@@ -19,6 +19,11 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              Image.asset(
+                "lib/images/original-9b8466cce59081fe77f6a22be0f49d66.webp",
+              ),
+
+              SizedBox(height: 40),
               Text(
                 "Welcome to our App",
                 style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
@@ -27,7 +32,7 @@ class _LoginPageState extends State<LoginPage> {
               SizedBox(height: 15),
               Text(
                 "Best Blog and news app in the world",
-                style: TextStyle(fontSize: 18, color: Colors.grey[600]),
+                style: TextStyle(fontSize: 18, color: Colors.grey[800]),
               ),
 
               SizedBox(height: 20),
@@ -50,6 +55,89 @@ class _LoginPageState extends State<LoginPage> {
                 imageHeight: 35,
                 imageWidth: 35,
                 onPressed: () {},
+              ),
+
+              SizedBox(height: 10),
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 20),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Divider(color: Colors.grey[360], thickness: 1),
+                    ),
+                    SizedBox(width: 10),
+                    Text(
+                      "Or log in",
+                      style: TextStyle(fontSize: 18, color: Colors.grey[800]),
+                    ),
+                    SizedBox(width: 10),
+                    Expanded(
+                      child: Divider(color: Colors.grey[360], thickness: 1),
+                    ),
+                  ],
+                ),
+              ),
+
+              SizedBox(height: 5),
+              SizedBox(
+                height: 60,
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Color(0xffedefef),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(50),
+                      side: BorderSide(
+                        color: const Color.fromARGB(
+                          255,
+                          128,
+                          128,
+                          128,
+                        ).withOpacity(0.3),
+                        width: 1,
+                      ),
+                    ),
+                    elevation: 0,
+                    shadowColor: Colors.transparent,
+                    splashFactory: NoSplash.splashFactory,
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.center,
+
+                    children: [
+                      Icon(Icons.email, size: 30, color: Colors.black),
+                      SizedBox(width: 15),
+                      Text(
+                        "Continue with Email",
+                        style: const TextStyle(
+                          fontSize: 20,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+
+              SizedBox(height: 30),
+              // Log in
+              Text.rich(
+                TextSpan(
+                  text: "Already have an account ",
+                  style: TextStyle(color: Colors.black, fontSize: 20),
+                  children: <TextSpan>[
+                    TextSpan(
+                      text: "Login",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
