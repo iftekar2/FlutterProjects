@@ -4,12 +4,16 @@ class SigninOptionsButton extends StatelessWidget {
   final String buttonText;
   final String buttonImage;
   final VoidCallback onPressed;
+  final double imageHeight;
+  final double imageWidth;
 
   const SigninOptionsButton({
     super.key,
     required this.buttonText,
     required this.buttonImage,
     required this.onPressed,
+    this.imageHeight = 35,
+    this.imageWidth = 35,
   });
 
   @override
@@ -20,10 +24,13 @@ class SigninOptionsButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.grey[300],
+          backgroundColor: Color(0xffedefef),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(50),
-            side: BorderSide(color: Colors.grey.withOpacity(0.3), width: 1),
+            side: BorderSide(
+              color: const Color.fromARGB(255, 128, 128, 128).withOpacity(0.3),
+              width: 1,
+            ),
           ),
           elevation: 0,
           shadowColor: Colors.transparent,
@@ -34,9 +41,10 @@ class SigninOptionsButton extends StatelessWidget {
           children: [
             Align(
               alignment: Alignment.centerLeft,
-              child: Padding(
-                padding: const EdgeInsets.only(left: 5),
-                child: Image.asset(buttonImage, width: 35, height: 35),
+              child: Image.asset(
+                buttonImage,
+                width: imageWidth,
+                height: imageHeight,
               ),
             ),
             Text(
