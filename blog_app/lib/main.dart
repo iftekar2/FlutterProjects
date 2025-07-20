@@ -1,3 +1,4 @@
+import 'package:blog_app/pages/email_login_page.dart';
 import 'package:blog_app/pages/home_page.dart';
 import 'package:blog_app/pages/login_page.dart';
 import 'package:blog_app/pages/welcome_page.dart';
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
         '/welcome_page': (context) => const WelcomePage(),
         '/login_page': (context) => const LoginPage(),
         '/home_page': (context) => const HomePage(),
+        '/email_login_page': (context) => const EmailLoginPage(),
       },
     );
   }
