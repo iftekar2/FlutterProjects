@@ -35,11 +35,11 @@ class _TextfieldComponentState extends State<TextfieldComponent> {
                 ),
                 onPressed: () {
                   setState(() {
-                    _obsecureText = !_obsecureText; // Toggle visibility
+                    _obsecureText = !_obsecureText;
                   });
                 },
               )
-            : null, // No suffix icon if it's not a password field
+            : null,
       ),
     );
   }

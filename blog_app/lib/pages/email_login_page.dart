@@ -16,7 +16,7 @@ class _EmailLoginPageState extends State<EmailLoginPage> {
 
       backgroundColor: Color(0xffedefef),
       body: Padding(
-        padding: EdgeInsets.only(left: 25, right: 25, top: 60),
+        padding: EdgeInsets.only(left: 25, right: 25, top: 50),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
@@ -84,6 +84,37 @@ class _EmailLoginPageState extends State<EmailLoginPage> {
             ),
             SizedBox(height: 10),
             TextfieldComponent(hintText: "Enter password", isPassword: true),
+
+            SizedBox(height: 20),
+            SizedBox(
+              height: 60,
+              width: 400,
+              child: ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color(0xffedefef),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(50),
+                    side: BorderSide(
+                      color: const Color.fromARGB(
+                        255,
+                        128,
+                        128,
+                        128,
+                      ).withOpacity(0.3),
+                      width: 1,
+                    ),
+                  ),
+                  elevation: 0,
+                  shadowColor: Colors.transparent,
+                  splashFactory: NoSplash.splashFactory,
+                ),
+                child: Text(
+                  "Sign Up",
+                  style: TextStyle(color: Colors.black, fontSize: 18),
+                ),
+              ),
+            ),
           ],
         ),
       ),
