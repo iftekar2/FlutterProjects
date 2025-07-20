@@ -50,7 +50,7 @@ class _EmailLoginPageState extends State<EmailLoginPage> {
               ),
             ),
             SizedBox(height: 10),
-            TextfieldComponent(hintText: "Enter full name"),
+            TextfieldComponent(hintText: "Enter full name", isPassword: false),
 
             SizedBox(height: 20),
             Align(
@@ -61,7 +61,7 @@ class _EmailLoginPageState extends State<EmailLoginPage> {
               ),
             ),
             SizedBox(height: 10),
-            TextfieldComponent(hintText: "Enter your email"),
+            TextfieldComponent(hintText: "Enter your email", isPassword: false),
 
             SizedBox(height: 20),
             Align(
@@ -72,7 +72,7 @@ class _EmailLoginPageState extends State<EmailLoginPage> {
               ),
             ),
             SizedBox(height: 10),
-            TextfieldComponent(hintText: "Enter password"),
+            TextfieldComponent(hintText: "Enter password", isPassword: true),
 
             SizedBox(height: 20),
             Align(
@@ -83,7 +83,7 @@ class _EmailLoginPageState extends State<EmailLoginPage> {
               ),
             ),
             SizedBox(height: 10),
-            TextfieldComponent(hintText: "Enter password"),
+            TextfieldComponent(hintText: "Enter password", isPassword: true),
           ],
         ),
       ),
