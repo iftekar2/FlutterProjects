@@ -11,12 +11,6 @@ class EmailSignupPage extends StatefulWidget {
 }
 
 class _EmailSignupPageState extends State<EmailSignupPage> {
-  // Remove redundant String variables, use controllers directly
-  // String name = "";
-  // String email = "";
-  // String password = "";
-  // String confirmPassword = "";
-
   final TextEditingController nameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();

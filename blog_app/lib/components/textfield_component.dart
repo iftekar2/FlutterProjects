@@ -24,7 +24,7 @@ class _TextfieldComponentState extends State<TextfieldComponent> {
   @override
   Widget build(BuildContext context) {
     // Re-added border color logic from previous suggestions for consistency
-    final Color actualBorderColor = Colors.grey[300]!;
+    final Color actualBorderColor = Colors.grey[800]!;
     final Color actualFocusedBorderColor = Theme.of(context).primaryColor;
 
     return TextFormField(
