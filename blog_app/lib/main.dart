@@ -1,5 +1,6 @@
 import 'package:blog_app/pages/email_signup_page.dart';
 import 'package:blog_app/pages/home_page.dart';
+import 'package:blog_app/pages/login_options_page.dart';
 import 'package:blog_app/pages/login_page.dart';
 import 'package:blog_app/pages/welcome_page.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -23,9 +24,10 @@ class MyApp extends StatelessWidget {
       home: const WelcomePage(),
       routes: {
         '/welcome_page': (context) => const WelcomePage(),
-        '/login_page': (context) => const LoginPage(),
+        '/login_options_page': (context) => const LoginOptionsPage(),
         '/home_page': (context) => const HomePage(),
         '/email_signup_page': (context) => const EmailSignupPage(),
+        '/login_page': (context) => const LoginPage(),
       },
     );
   }

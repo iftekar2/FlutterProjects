@@ -127,7 +127,7 @@ class _WelcomePageState extends State<WelcomePage> {
             child: ElevatedButton(
               onPressed: () {
                 // Navigate to your main app screen or login/signup page
-                Navigator.pushReplacementNamed(context, '/login_page');
+                Navigator.pushReplacementNamed(context, '/login_options_page');
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.black,

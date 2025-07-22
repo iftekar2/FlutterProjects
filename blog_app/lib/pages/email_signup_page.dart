@@ -1,6 +1,9 @@
 import 'package:blog_app/components/textfield_component.dart';
 import 'package:blog_app/pages/home_page.dart';
+import 'package:blog_app/pages/login_options_page.dart';
+import 'package:blog_app/pages/login_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class EmailSignupPage extends StatefulWidget {
@@ -116,16 +119,21 @@ class _EmailSignupPageState extends State<EmailSignupPage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xffedefef),
-      ), // Use const for colors
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => const LoginOptionsPage()),
+            );
+          },
+          icon: const Icon(Icons.arrow_back, color: Colors.black),
+        ),
+      ),
 
       backgroundColor: const Color(0xffedefef),
       body: SingleChildScrollView(
         // Add SingleChildScrollView for scrollability
-        padding: const EdgeInsets.only(
-          left: 25,
-          right: 25,
-          top: 20,
-        ), // Use const for EdgeInsets
+        padding: const EdgeInsets.only(left: 25, right: 25, top: 20),
         child: Form(
           key: _formKey,
           child: Column(
@@ -155,7 +163,6 @@ class _EmailSignupPageState extends State<EmailSignupPage> {
               ),
 
               const SizedBox(height: 30),
-              // Name Field
               const Text(
                 "Name",
                 style: TextStyle(color: Colors.black, fontSize: 20),
@@ -260,9 +267,15 @@ class _EmailSignupPageState extends State<EmailSignupPage> {
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                       ),
-                      // recognizer: TapGestureRecognizer()..onTap = () {
-                      //   Navigator.push(context, MaterialPageRoute(builder: (context) => const LoginPage()));
-                      // },
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const LoginPage(),
+                            ),
+                          );
+                        },
                     ),
                   ],
                 ),
@@ -271,7 +284,7 @@ class _EmailSignupPageState extends State<EmailSignupPage> {
               const SizedBox(height: 30),
               SizedBox(
                 height: 60,
-                width: 400, // Consider using double.infinity for width
+                width: 400,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.black,
@@ -282,8 +295,6 @@ class _EmailSignupPageState extends State<EmailSignupPage> {
                   onPressed: () {
                     // Validate the form
                     if (_formKey.currentState!.validate()) {
-                      // All validations passed, proceed with registration
-                      // No need for setState to copy text to local strings if you use controllers directly
                       registration();
                     }
                   },
