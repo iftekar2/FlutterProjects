@@ -19,7 +19,7 @@ class TextfieldComponent extends StatefulWidget {
 }
 
 class _TextfieldComponentState extends State<TextfieldComponent> {
-  bool _obscureText = true; // Corrected typo here
+  bool _obscureText = true;
 
   @override
   Widget build(BuildContext context) {
