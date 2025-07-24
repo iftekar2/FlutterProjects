@@ -83,7 +83,6 @@ class _LoginPageState extends State<LoginPage> {
               ),
 
               SizedBox(height: 10),
-
               Text(
                 "Please enter login details below",
                 style: TextStyle(fontSize: 18),
