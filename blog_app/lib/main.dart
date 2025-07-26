@@ -1,7 +1,7 @@
-import 'package:blog_app/pages/email_signup_page.dart';
+import 'package:blog_app/pages/login/email_signup_page.dart';
 import 'package:blog_app/pages/home_page.dart';
-import 'package:blog_app/pages/login_options_page.dart';
-import 'package:blog_app/pages/login_page.dart';
+import 'package:blog_app/pages/login/login_options_page.dart';
+import 'package:blog_app/pages/login/login_page.dart';
 import 'package:blog_app/pages/welcome_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';

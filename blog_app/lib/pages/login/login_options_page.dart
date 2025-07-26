@@ -1,6 +1,6 @@
 import 'package:blog_app/authentication/auth.dart';
 import 'package:blog_app/components/signin_options_button.dart';
-import 'package:blog_app/pages/email_signup_page.dart';
+import 'package:blog_app/pages/login/email_signup_page.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 

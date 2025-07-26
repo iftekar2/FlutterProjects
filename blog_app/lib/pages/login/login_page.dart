@@ -1,4 +1,4 @@
-import 'package:blog_app/pages/forgot_password_page.dart';
+import 'package:blog_app/pages/login/forgot_password_page.dart';
 import 'package:blog_app/pages/home_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';

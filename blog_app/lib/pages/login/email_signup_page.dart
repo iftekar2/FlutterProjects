@@ -1,7 +1,7 @@
 import 'package:blog_app/components/textfield_component.dart';
 import 'package:blog_app/pages/home_page.dart';
-import 'package:blog_app/pages/login_options_page.dart';
-import 'package:blog_app/pages/login_page.dart';
+import 'package:blog_app/pages/login/login_options_page.dart';
+import 'package:blog_app/pages/login/login_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
