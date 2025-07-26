@@ -3,7 +3,7 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 
 class BlogDatabase {
   // Database --> Blog
-  final database = Supabase.instance.client.from('blog');
+  final database = Supabase.instance.client.from('Blog');
 
   // Create a new blog
   Future createBlog(Blog newBlog) async {
@@ -12,7 +12,7 @@ class BlogDatabase {
 
   // Read a blog
   final stream = Supabase.instance.client
-      .from('blog')
+      .from('Blog')
       .stream(primaryKey: ['id'])
       .map((data) => data.map((blogMap) => Blog.fromMap(blogMap)).toList());
 
@@ -21,8 +21,8 @@ class BlogDatabase {
     await database
         .update({
           'title': newBlog.title,
-          'author': newBlog.title,
-          'content': newBlog.title,
+          'author': newBlog.author,
+          'content': newBlog.content,
         })
         .eq('id', oldBlog.id!);
   }
