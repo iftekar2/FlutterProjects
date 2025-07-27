@@ -28,7 +28,7 @@ class BlogDatabase {
   }
 
   // Delete a blog
-  Future deleteBlot(Blog blog) async {
+  Future deleteBlog(Blog blog) async {
     await database.delete().eq('id', blog.id!);
     ;
   }

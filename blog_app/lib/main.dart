@@ -1,4 +1,3 @@
-import 'package:blog_app/components/supabase.dart';
 import 'package:blog_app/pages/login/email_signup_page.dart';
 import 'package:blog_app/pages/home_page.dart';
 import 'package:blog_app/pages/login/login_options_page.dart';

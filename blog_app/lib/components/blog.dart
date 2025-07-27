@@ -23,16 +23,13 @@ class Blog {
 
   // note to map
   Map<String, dynamic> toMap() {
-    // Only include 'id' if it's not null (e.g., for updates)
-    // For new inserts, we let the database handle it.
     final Map<String, dynamic> map = {
       'title': title,
       'author': author,
       'content': content,
     };
     if (id != null) {
-      map['id'] =
-          id; // Include id only if it exists (for updates or specific cases)
+      map['id'] = id;
     }
     return map;
   }
